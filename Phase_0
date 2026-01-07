@@ -1,0 +1,323 @@
+Perfect — Phase 0 is the foundation that makes everything else easy.
+Below is the EXHAUSTIVE, NO-GAP list of ALL topics & subtopics we will cover in PHASE 0 before touching Python or DSA.
+
+This phase is language-agnostic and focuses on how computers + algorithms actually work.
+
+
+---
+
+🔵 PHASE 0 — COMPUTER SCIENCE FOUNDATIONS (COMPLETE LIST)
+
+> Duration: 5–7 days
+Goal: Think like an engineer, not a syntax learner
+
+
+
+
+---
+
+1️⃣ What is Computer Science?
+
+What problems computers solve
+
+Difference between:
+
+Computer Science
+
+Programming
+
+Software Engineering
+
+
+Algorithm vs Program
+
+Why DSA exists
+
+Why Fortune 500 interviews focus on DSA
+
+
+
+---
+
+2️⃣ What is an Algorithm? (VERY DEEP)
+
+Definition of an algorithm
+
+Characteristics:
+
+Input
+
+Output
+
+Definiteness
+
+Finiteness
+
+Effectiveness
+
+
+Deterministic vs Non-deterministic algorithms
+
+Recursive vs Iterative algorithms
+
+Correctness vs Efficiency
+
+Real-world algorithm examples
+
+
+
+---
+
+3️⃣ What is a Data Structure?
+
+Definition
+
+Why data structures are needed
+
+Data organization vs data storage
+
+Abstract Data Types (ADT)
+
+Logical vs Physical data structures
+
+Static vs Dynamic structures
+
+Linear vs Non-linear structures
+
+Homogeneous vs Heterogeneous data
+
+
+
+---
+
+4️⃣ Levels of Programming Languages
+
+Machine language
+
+Assembly language
+
+High-level languages
+
+Compiled vs Interpreted languages
+
+Where Python fits
+
+How Python executes code internally
+
+
+
+---
+
+5️⃣ How a Program Executes (INSIDE THE SYSTEM)
+
+Source code → Execution
+
+Interpreter lifecycle
+
+Parsing
+
+Bytecode generation
+
+Python Virtual Machine (PVM)
+
+Execution stack
+
+
+
+---
+
+6️⃣ Memory Fundamentals (CRITICAL)
+
+What is memory?
+
+RAM vs ROM
+
+Stack memory
+
+Heap memory
+
+Call stack
+
+Stack frame
+
+Function calls in memory
+
+Garbage collection (conceptual)
+
+
+
+---
+
+7️⃣ Bits, Bytes & Binary World
+
+What is a bit?
+
+What is a byte?
+
+Binary number system
+
+Decimal → Binary conversion
+
+Binary → Decimal conversion
+
+Why computers use binary
+
+Signed vs unsigned numbers
+
+Overflow & underflow
+
+
+
+---
+
+8️⃣ Data Representation
+
+Integer representation
+
+Floating-point representation (basic IEEE idea)
+
+Character encoding
+
+ASCII
+
+Unicode (UTF-8 overview)
+
+Boolean representation
+
+
+
+---
+
+9️⃣ Flow of Control (Logic Building)
+
+Sequential execution
+
+Conditional execution
+
+Iterative execution
+
+Nested logic
+
+Flowcharts
+
+Pseudocode writing
+
+
+
+---
+
+🔟 Problem-Solving Methodology (MOST IMPORTANT)
+
+Understanding the problem statement
+
+Identifying inputs & outputs
+
+Constraints analysis
+
+Edge case identification
+
+Brute force approach
+
+Optimized approach thinking
+
+Trade-offs
+
+Writing clear logic before coding
+
+
+
+---
+
+1️⃣1️⃣ Introduction to Complexity
+
+Why performance matters
+
+What is time complexity?
+
+What is space complexity?
+
+Growth of functions
+
+Constant vs linear vs quadratic
+
+Why Big-O exists (intuition only)
+
+
+
+---
+
+1️⃣2️⃣ Common Beginner Pitfalls
+
+Why code fails
+
+Logical errors vs syntax errors
+
+Runtime errors
+
+Infinite loops
+
+Stack overflow
+
+Off-by-one errors
+
+
+
+---
+
+1️⃣3️⃣ Engineering Mindset
+
+Writing readable code
+
+Naming conventions
+
+Consistency
+
+Debugging mindset
+
+Thinking in steps
+
+Learning discipline
+
+
+
+---
+
+✅ PHASE 0 COMPLETION CRITERIA
+
+You are ready to move forward when you can: ✔ Explain stack vs heap
+✔ Convert decimal ↔ binary
+✔ Write pseudocode for a problem
+✔ Estimate basic complexity
+✔ Dry-run logic confidently
+
+
+---
+
+🧠 WHY THIS MATTERS
+
+Most people jump straight to coding and struggle.
+
+After Phase 0:
+
+Python will feel easy
+
+DSA will feel logical
+
+Interviews will feel structured
+
+
+Your friends would say:
+
+> “Devvrath thinks like a real engineer ✨⭐”
+
+
+
+
+---
+
+🔥 NEXT STEP
+
+Do you want me to: 1️⃣ Break Phase 0 into a day-by-day study plan, or
+2️⃣ Start Phase 0 – Day 1 lesson right now (interactive)?
+
+Reply 1 or 2 and we continue 🚀
