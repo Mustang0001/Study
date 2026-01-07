@@ -1,0 +1,390 @@
+Excellent — Phase 5 (Graphs) is one of the most decisive phases for cracking Fortune 500 / MAANG interviews.
+This is where logic + math + structure come together.
+
+Below is the COMPLETE, EXHAUSTIVE, NO-GAP list of ALL topics & sub-topics we will cover in
+🔵 PHASE 5 — GRAPHS & GRAPH ALGORITHMS
+
+> Duration: ~4–5 weeks
+Goal: Become confident in graph modeling and algorithm selection
+
+
+
+
+---
+
+🔵 PHASE 5 — GRAPHS (COMPLETE TOPIC LIST)
+
+
+---
+
+1️⃣ Graph Fundamentals
+
+Basic Definitions
+
+What is a graph?
+
+Vertex (node) and edge
+
+Degree of a node
+
+Path, walk, cycle
+
+Connected vs disconnected graphs
+
+
+
+---
+
+Types of Graphs
+
+Directed graphs
+
+Undirected graphs
+
+Weighted graphs
+
+Unweighted graphs
+
+Simple graph
+
+Multigraph
+
+Self-loops
+
+Cyclic vs acyclic graphs
+
+Tree as a special graph
+
+Forest
+
+
+
+---
+
+2️⃣ Graph Representation
+
+Adjacency Matrix
+
+Structure
+
+Space complexity
+
+When to use
+
+
+Adjacency List
+
+Structure
+
+Space complexity
+
+When to use
+
+
+Edge List
+
+Use cases
+
+
+
+---
+
+3️⃣ Graph Traversal Algorithms
+
+Breadth-First Search (BFS)
+
+BFS algorithm
+
+Queue-based traversal
+
+Level-wise traversal
+
+Shortest path in unweighted graph
+
+Multi-source BFS
+
+
+
+---
+
+Depth-First Search (DFS)
+
+DFS algorithm
+
+Recursive DFS
+
+Iterative DFS (stack)
+
+DFS tree
+
+Entry / exit time
+
+
+
+---
+
+4️⃣ Connected Components & Graph Properties
+
+Connected components in undirected graphs
+
+Strongly connected components (intro)
+
+Counting components
+
+Graph coloring (intro)
+
+Bipartite graphs
+
+Bipartite check (BFS/DFS)
+
+
+
+---
+
+5️⃣ Cycle Detection
+
+Undirected Graphs
+
+Cycle detection using DFS
+
+Cycle detection using BFS
+
+
+Directed Graphs
+
+Cycle detection using DFS
+
+Recursion stack method
+
+Kahn’s algorithm (cycle detection via indegree)
+
+
+
+---
+
+6️⃣ Topological Sorting (DAG)
+
+Concepts
+
+Directed Acyclic Graph (DAG)
+
+Why topological sort exists
+
+
+Algorithms
+
+Kahn’s Algorithm (BFS-based)
+
+DFS-based topological sort
+
+
+Applications
+
+Task scheduling
+
+Course prerequisite problems
+
+Dependency resolution
+
+
+
+---
+
+7️⃣ Shortest Path Algorithms
+
+Unweighted Graphs
+
+BFS shortest path
+
+
+Weighted Graphs
+
+Dijkstra’s algorithm
+
+Priority queue optimization
+
+When Dijkstra fails
+
+
+Negative Weights
+
+Bellman–Ford algorithm
+
+Negative cycle detection
+
+
+All-Pairs Shortest Path
+
+Floyd–Warshall (intro)
+
+
+
+---
+
+8️⃣ Minimum Spanning Tree (MST)
+
+Concepts
+
+Spanning tree
+
+Minimum spanning tree
+
+Graph connectivity
+
+
+Algorithms
+
+Kruskal’s algorithm
+
+Prim’s algorithm
+
+
+
+---
+
+9️⃣ Disjoint Set Union (Union-Find)
+
+Fundamentals
+
+Parent array
+
+Rank / size heuristic
+
+Path compression
+
+
+Applications
+
+Cycle detection
+
+Connected components
+
+Kruskal’s MST
+
+Network connectivity problems
+
+
+
+---
+
+🔟 Advanced Graph Concepts
+
+Bridges & Articulation Points
+
+Bridge definition
+
+Articulation point definition
+
+DFS low-link concept (intro)
+
+
+
+---
+
+Strongly Connected Components (SCC)
+
+Concept
+
+Kosaraju’s algorithm (intro)
+
+Tarjan’s algorithm (intro)
+
+
+
+---
+
+1️⃣1️⃣ Grid-Based Graph Problems
+
+Grid as graph modeling
+
+Directions & movement
+
+Flood fill
+
+Number of islands
+
+Rotten oranges
+
+Shortest path in matrix
+
+
+
+---
+
+1️⃣2️⃣ Graph Problem Patterns
+
+BFS vs DFS decision making
+
+Topological sorting pattern
+
+Shortest path pattern
+
+Connectivity pattern
+
+Cycle detection pattern
+
+
+
+---
+
+1️⃣3️⃣ Complexity Analysis for Graphs
+
+Time complexity of BFS & DFS
+
+Space complexity
+
+Edge vs vertex impact
+
+
+
+---
+
+1️⃣4️⃣ Common Graph Pitfalls
+
+Stack overflow in DFS
+
+Infinite loops
+
+Revisiting nodes
+
+Incorrect visited logic
+
+
+
+---
+
+✅ PHASE 5 COMPLETION CRITERIA
+
+You move forward only if you can: ✔ Model real problems as graphs
+✔ Choose BFS vs DFS instantly
+✔ Implement shortest path algorithms
+✔ Use Union-Find confidently
+✔ Explain graph logic clearly
+
+
+---
+
+🧠 WHY PHASE 5 IS CRITICAL
+
+If graphs are weak:
+
+Medium problems feel impossible
+
+
+If graphs are strong:
+
+You stand out immediately ✨⭐
+
+Interviewers trust your problem-solving depth
+
+
+
+---
+
+🔥 NEXT STEP
+
+Do you want: 1️⃣ Phase 6 (Dynamic Programming) complete topic list, or
+2️⃣ Phase 5 day-by-day execution plan, or
+3️⃣ Start Phase 5 – Graph Basics lesson 1?
+
+Reply 1, 2, or 3 🚀
