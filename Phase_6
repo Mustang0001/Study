@@ -1,0 +1,341 @@
+Excellent — Phase 6 (Dynamic Programming) is the phase that separates average candidates from top 1% engineers in Fortune 500 interviews.
+
+This phase teaches you how to think optimally, not just code.
+
+Below is the COMPLETE, EXHAUSTIVE, NO-GAP list of ALL topics & sub-topics we will cover in
+🔵 PHASE 6 — DYNAMIC PROGRAMMING (DP)
+
+> Duration: ~5–6 weeks
+Goal: Master DP patterns, state design, and optimization
+
+
+
+
+---
+
+🔵 PHASE 6 — DYNAMIC PROGRAMMING (COMPLETE TOPIC LIST)
+
+
+---
+
+1️⃣ Dynamic Programming Foundations
+
+Core Concepts
+
+What is Dynamic Programming?
+
+When DP should be used
+
+Overlapping subproblems
+
+Optimal substructure
+
+DP vs recursion vs greedy
+
+Top-down vs bottom-up approach
+
+
+
+---
+
+2️⃣ Recursion → DP Transition
+
+Identifying recursive structure
+
+Converting recursion to memoization
+
+Removing repeated work
+
+Call stack vs DP table
+
+
+
+---
+
+3️⃣ DP State Design (MOST IMPORTANT)
+
+What is a DP state?
+
+Choosing correct dimensions
+
+Meaning of state variables
+
+State space analysis
+
+Constraints-based state reduction
+
+
+
+---
+
+4️⃣ DP Transitions
+
+Defining recurrence relations
+
+Transition logic
+
+Handling multiple choices
+
+Base cases
+
+Order of computation
+
+
+
+---
+
+5️⃣ Memoization (Top-Down DP)
+
+Using dictionaries / arrays
+
+Caching results
+
+Stack depth considerations
+
+When memoization is ideal
+
+
+
+---
+
+6️⃣ Tabulation (Bottom-Up DP)
+
+Table construction
+
+Iteration order
+
+Dependency resolution
+
+Avoiding recursion overhead
+
+
+
+---
+
+7️⃣ Space Optimization Techniques
+
+Reducing 2D DP → 1D
+
+Rolling arrays
+
+In-place DP
+
+Trade-offs
+
+
+
+---
+
+8️⃣ 1D Dynamic Programming Problems
+
+Classic Problems
+
+Fibonacci
+
+Climbing stairs
+
+House robber
+
+Maximum subarray (DP view)
+
+
+
+---
+
+9️⃣ 2D Dynamic Programming Problems
+
+Grid-Based DP
+
+Unique paths
+
+Minimum path sum
+
+Dungeon game (intro)
+
+
+String DP
+
+Longest Common Subsequence (LCS)
+
+Longest Common Substring
+
+Edit distance
+
+Palindrome partitioning
+
+
+
+---
+
+🔟 Knapsack Pattern (VERY IMPORTANT)
+
+0/1 Knapsack
+
+Problem formulation
+
+DP table construction
+
+Optimization techniques
+
+
+Unbounded Knapsack
+
+Coin change (min ways / total ways)
+
+Rod cutting
+
+
+
+---
+
+1️⃣1️⃣ Subsequence DP Pattern
+
+Longest Increasing Subsequence (LIS)
+
+Bitonic subsequence
+
+Count of subsequences
+
+Distinct subsequences
+
+
+
+---
+
+1️⃣2️⃣ Partition DP
+
+Subset sum
+
+Equal sum partition
+
+Minimum partition difference
+
+Palindrome partitioning (DP approach)
+
+
+
+---
+
+1️⃣3️⃣ DP on Strings (ADVANCED)
+
+Pattern matching DP
+
+Wildcard matching
+
+Regular expression matching (intro)
+
+
+
+---
+
+1️⃣4️⃣ DP on Trees (INTRO)
+
+Tree DP concept
+
+Subtree DP
+
+Path-based DP
+
+
+
+---
+
+1️⃣5️⃣ DP on Graphs (INTRO)
+
+DAG DP
+
+Longest path in DAG
+
+
+
+---
+
+1️⃣6️⃣ Bitmask Dynamic Programming (ADVANCED)
+
+Bitmask representation
+
+Traveling Salesman Problem (TSP)
+
+State compression DP
+
+
+
+---
+
+1️⃣7️⃣ DP Optimization Techniques
+
+Pruning states
+
+Greedy + DP hybrid
+
+Convex hull trick (intro)
+
+Binary search + DP
+
+
+
+---
+
+1️⃣8️⃣ Common DP Mistakes
+
+Wrong state definition
+
+Missing base cases
+
+Wrong iteration order
+
+Excessive memory usage
+
+
+
+---
+
+1️⃣9️⃣ DP Problem Patterns (INTERVIEW GOLD)
+
+Take / not take
+
+Partition
+
+Merge intervals (intro)
+
+Count ways vs min/max
+
+
+
+---
+
+✅ PHASE 6 COMPLETION CRITERIA
+
+You move forward only if you can: ✔ Design DP states yourself
+✔ Convert recursion to DP
+✔ Optimize space confidently
+✔ Solve medium DP without hints
+✔ Explain recurrence clearly
+
+
+---
+
+🧠 WHY PHASE 6 IS A GAME-CHANGER
+
+If DP is weak:
+
+Hard problems feel impossible
+
+
+If DP is strong:
+
+Hard problems become structured ✨⭐
+
+Interviewers immediately respect you
+
+
+
+---
+
+🔥 NEXT STEP
+
+Do you want: 1️⃣ Phase 7 (Advanced Algorithms) complete topic list, or
+2️⃣ Phase 6 day-by-day execution plan, or
+3️⃣ Start Phase 6 – DP Foundations lesson 1?
+
+Reply 1, 2, or 3 🚀
