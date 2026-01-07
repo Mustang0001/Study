@@ -1,0 +1,423 @@
+Excellent — Phase 4 is where you move from “good at DSA” to “interview-ready engineer.”
+These are non-linear data structures that Fortune 500 companies love to test.
+
+Below is the COMPLETE, EXHAUSTIVE, NO-GAP list of ALL topics & sub-topics we will cover in
+🔵 PHASE 4 — NON-LINEAR DATA STRUCTURES
+
+> Duration: ~6 weeks
+Goal: Master Trees, Heaps, Tries & advanced techniques used in interviews
+
+
+
+
+---
+
+🔵 PHASE 4 — NON-LINEAR DATA STRUCTURES (COMPLETE TOPIC LIST)
+
+
+---
+
+1️⃣ Trees (CORE & EXTENSIVE)
+
+Tree Fundamentals
+
+What is a tree?
+
+Terminology:
+
+Node
+
+Root
+
+Parent / Child
+
+Leaf
+
+Level
+
+Height vs Depth
+
+
+Degree of a node
+
+Path & path length
+
+Subtrees
+
+Types of trees
+
+
+
+---
+
+Binary Trees
+
+Binary tree definition
+
+Full, complete, perfect trees
+
+Balanced vs unbalanced trees
+
+Representation (array vs linked)
+
+Recursive vs iterative traversal
+
+
+
+---
+
+Tree Traversals
+
+Depth-First Search (DFS)
+
+Preorder
+
+Inorder
+
+Postorder
+
+
+Breadth-First Search (BFS)
+
+Level order traversal
+
+
+Recursive vs iterative traversal
+
+Stack vs queue usage
+
+
+
+---
+
+Tree Properties & Measurements
+
+Height of tree
+
+Depth of node
+
+Size of tree
+
+Maximum / minimum value
+
+Tree diameter
+
+Width of tree
+
+
+
+---
+
+Tree Views & Variations
+
+Left view
+
+Right view
+
+Top view
+
+Bottom view
+
+Vertical order traversal
+
+Zigzag traversal
+
+Boundary traversal
+
+
+
+---
+
+Advanced Binary Tree Problems
+
+Lowest Common Ancestor (LCA)
+
+Path sum problems
+
+Root-to-leaf paths
+
+Convert tree to linked list
+
+Check balanced tree
+
+Symmetric tree
+
+Mirror tree
+
+Serialize & deserialize tree
+
+
+
+---
+
+2️⃣ Binary Search Trees (BST)
+
+BST Fundamentals
+
+BST property
+
+Why BSTs are used
+
+Comparison with binary trees
+
+
+
+---
+
+BST Operations
+
+Search
+
+Insert
+
+Delete (0, 1, 2 children cases)
+
+Find min / max
+
+Floor & ceil
+
+Predecessor & successor
+
+
+
+---
+
+BST Validation & Construction
+
+Validate BST
+
+Build BST from sorted array
+
+Convert BST to sorted list
+
+Balanced BST creation
+
+
+
+---
+
+Advanced BST Problems
+
+Kth smallest / largest element
+
+Range sum in BST
+
+Lowest Common Ancestor in BST
+
+Recover swapped BST
+
+
+
+---
+
+3️⃣ Heaps (PRIORITY STRUCTURES)
+
+Heap Fundamentals
+
+Heap definition
+
+Min heap vs max heap
+
+Complete binary tree property
+
+Heap representation (array)
+
+
+
+---
+
+Heap Operations
+
+Heapify
+
+Insert
+
+Delete
+
+Peek
+
+Build heap (top-down vs bottom-up)
+
+
+
+---
+
+Priority Queue
+
+Priority queue concept
+
+Heap-based implementation
+
+Custom comparators (Python)
+
+
+
+---
+
+Heap-Based Problems
+
+K largest / smallest elements
+
+Top-K frequent elements
+
+Merge K sorted lists
+
+Median of data stream
+
+Sort nearly sorted array
+
+
+
+---
+
+4️⃣ Tries (Prefix Trees)
+
+Trie Fundamentals
+
+Trie structure
+
+Node representation
+
+Character indexing
+
+Prefix vs full word
+
+
+
+---
+
+Trie Operations
+
+Insert word
+
+Search word
+
+Prefix search
+
+Delete word (conceptual)
+
+
+
+---
+
+Trie Applications
+
+Auto-complete
+
+Spell checker
+
+Word dictionary
+
+Longest common prefix
+
+XOR maximum problems (bitwise trie)
+
+
+
+---
+
+5️⃣ Segment Trees (IMPORTANT FOR ADVANCED INTERVIEWS)
+
+Segment Tree Basics
+
+Range query concept
+
+Segment tree structure
+
+Building segment tree
+
+
+
+---
+
+Segment Tree Operations
+
+Range sum query
+
+Range minimum / maximum query
+
+Point update
+
+Lazy propagation (intro)
+
+
+
+---
+
+6️⃣ Binary Lifting & Tree Techniques
+
+Binary lifting concept
+
+LCA using binary lifting
+
+Ancestor queries
+
+Jump pointers
+
+
+
+---
+
+7️⃣ Tree-Based Dynamic Programming (INTRO)
+
+DP on trees
+
+Subtree DP
+
+Path DP (intro)
+
+
+
+---
+
+8️⃣ Engineering Patterns for Trees
+
+Recursive thinking patterns
+
+Bottom-up vs top-down recursion
+
+Using global vs return values
+
+Avoiding repeated computation
+
+
+
+---
+
+✅ PHASE 4 COMPLETION CRITERIA
+
+You move forward only if you can: ✔ Traverse trees confidently
+✔ Solve LCA without memorizing
+✔ Use heaps for priority problems
+✔ Implement trie from scratch
+✔ Explain tree recursion clearly
+
+
+---
+
+🧠 WHY PHASE 4 MATTERS
+
+If Phase 4 is weak:
+
+Medium → Hard problems feel impossible
+
+
+If Phase 4 is strong:
+
+Interviewers see engineering maturity
+
+Confidence skyrockets ✨⭐
+
+Advanced topics feel logical
+
+
+
+---
+
+🔥 NEXT STEP
+
+Do you want: 1️⃣ Phase 5 (Graphs) complete topic list, or
+2️⃣ Phase 4 day-by-day execution plan, or
+3️⃣ Start Phase 4 – Trees Lesson 1 (hands-on)?
+
+Reply 1, 2, or 3 🚀
