@@ -1,0 +1,201 @@
+Great question — and I’m glad you’re thinking **before** jumping in.
+Short, honest answer first:
+
+> **Yes, you *can* build a codec with Leo AI — but only if you control the process like a lead engineer.**
+> Leo will not “design a codec” for you end-to-end.
+> It *can* write **correct, clean, low-level code** *step by step* if you force it properly.
+
+Now let’s do this the *right* way 👇
+
+---
+
+## 🧠 Reality check (important)
+
+A codec requires:
+
+* math correctness
+* pipeline discipline
+* deterministic behavior
+* no hallucination tolerance
+
+Leo AI **fails** when:
+
+* scope is large
+* reasoning spans many steps
+* math + architecture are mixed in one prompt
+
+So we **never ask Leo to build a codec in one go**.
+
+We treat Leo like:
+
+> a fast, obedient **code generator**, not a designer.
+
+You = architect
+Leo = implementation engine
+
+---
+
+## 🧱 The ONLY way Leo works for codec development
+
+### You must:
+
+1. **Freeze the design**
+2. **Split into atomic stages**
+3. **Force determinism**
+4. **Review every stage**
+5. **Never let Leo “optimize” on its own**
+
+This matches exactly what you’re already doing with JPEG 👍
+
+---
+
+## 🪜 Correct decomposition for a codec (example)
+
+You already know this, but this is how Leo must be fed:
+
+```
+Stage 1: Color space conversion
+Stage 2: Chroma subsampling
+Stage 3: Block formation
+Stage 4: Level shift
+Stage 5: DCT
+Stage 6: Quantization
+Stage 7: Zigzag
+Stage 8: RLE
+Stage 9: (later) Entropy coding
+```
+
+⚠️ One stage per prompt. Always.
+
+---
+
+## 🔥 THE prompt that actually works with Leo (use this)
+
+### ✅ MASTER PROMPT TEMPLATE (save this)
+
+```
+Act strictly as a codec implementation engineer.
+
+Task:
+Implement ONLY the following codec stage:
+[EXACT STAGE NAME]
+
+Constraints:
+- Follow textbook JPEG / video codec behavior
+- No architecture changes
+- No optimizations unless explicitly requested
+- Deterministic output only
+- No pseudo-code
+- No explanations inside code
+- Use standard libraries only
+- Keep it modular and testable
+
+Input:
+[describe exact input shape, dtype, range]
+
+Output:
+[describe exact output shape, dtype, range]
+
+Rules:
+- Do not implement any other stage
+- Do not merge stages
+- Do not simplify math
+- Preserve numerical correctness
+```
+
+This **forces Leo into a narrow execution lane**.
+
+---
+
+## 🧪 Example (REALISTIC, SAFE)
+
+### Prompt for DCT stage
+
+```
+Act strictly as a codec implementation engineer.
+
+Task:
+Implement ONLY the 8x8 forward DCT for a grayscale image.
+
+Constraints:
+- JPEG compliant DCT (AAN or direct matrix)
+- Input is level-shifted (-128 to 127)
+- Output is float32 DCT coefficients
+- No quantization
+- No zigzag
+- No optimizations
+
+Input:
+np.ndarray of shape (H, W), float32
+
+Output:
+np.ndarray of shape (H, W), float32
+
+Rules:
+- No extra stages
+- No color conversion
+- No subsampling
+```
+
+Leo will do **fine** here.
+
+---
+
+## 🚫 What NOT to ask Leo (this will fail)
+
+❌ “Build a JPEG codec”
+❌ “Optimize this codec”
+❌ “Make it production ready”
+❌ “Use best practices”
+❌ “Improve performance”
+
+These trigger hallucination + overreach.
+
+---
+
+## 🧠 How YOU ensure production quality
+
+You must:
+
+* validate output numerically
+* compare with OpenCV / FFmpeg
+* add asserts
+* write tiny test images
+* inspect coefficient ranges
+
+Leo won’t do this unless you force it.
+
+---
+
+## 🧩 Best workflow (this is gold)
+
+1. **You define the math**
+2. Leo writes the code
+3. You test against reference
+4. You lock the stage
+5. Move to next stage
+
+This is *exactly* how real codec teams work.
+
+---
+
+## 🏁 Final truth (no sugarcoating)
+
+✔ Leo AI **can** help you build a codec
+✔ Only if **you already understand codecs** (you do)
+❌ Leo cannot *design* a codec
+❌ Leo cannot self-correct math
+
+Think of Leo as:
+
+> “A very fast intern who never questions your math”
+
+---
+
+If you want, next I can:
+
+* Help you write **stage-by-stage prompt scripts**
+* Review a Leo-generated codec stage for correctness
+* Design a **reference test harness** to validate every block
+
+Just say what stage you want to start with 🔧📐
