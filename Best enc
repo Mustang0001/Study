@@ -1,0 +1,513 @@
+import cv2
+
+import numpy as np
+
+from bitarray import bitarray
+
+from collections import Counter
+
+import heapq
+
+
+
+# -----------------------------
+
+# 1️⃣ Read image and convert to YCrCb
+
+# -----------------------------
+
+image = cv2.imread("Maha.png")
+
+H, W, _ = image.shape
+
+ycrcb = cv2.cvtColor(image, cv2.COLOR_BGR2YCrCb)
+
+Y, Cr, Cb = cv2.split(ycrcb)
+
+
+
+# -----------------------------
+
+# 2️⃣ Level shift
+
+# -----------------------------
+
+Y = Y.astype(np.int16) - 128
+
+Cb = Cb.astype(np.int16) - 128
+
+Cr = Cr.astype(np.int16) - 128
+
+
+
+# -----------------------------
+
+# 3️⃣ Subsample Cb and Cr (4:2:0)
+
+# -----------------------------
+
+Cb_sub = cv2.resize(Cb, (W//2, H//2), interpolation=cv2.INTER_LINEAR)
+
+Cr_sub = cv2.resize(Cr, (W//2, H//2), interpolation=cv2.INTER_LINEAR)
+
+
+
+# -----------------------------
+
+# 4️⃣ Pad channels to multiple of 8
+
+# -----------------------------
+
+def pad_channel(channel, block_size):
+
+    h, w = channel.shape
+
+    pad_h = (block_size - h % block_size) % block_size
+
+    pad_w = (block_size - w % block_size) % block_size
+
+    return np.pad(channel, ((0,pad_h),(0,pad_w)), mode='edge')
+
+
+
+Y_pad = pad_channel(Y, 8)
+
+Cb_pad = pad_channel(Cb_sub, 8)
+
+Cr_pad = pad_channel(Cr_sub, 8)
+
+
+
+# -----------------------------
+
+# 5️⃣ FDCT
+
+# -----------------------------
+
+def fdct_blocks(channel):
+
+    h, w = channel.shape
+
+    blocks = []
+
+    for i in range(0,h,8):
+
+        for j in range(0,w,8):
+
+            blk = channel[i:i+8,j:j+8].astype(np.float32)
+
+            blocks.append(cv2.dct(blk))
+
+    return blocks
+
+
+
+Y_blocks  = fdct_blocks(Y_pad)
+
+Cb_blocks = fdct_blocks(Cb_pad)
+
+Cr_blocks = fdct_blocks(Cr_pad)
+
+
+
+# -----------------------------
+
+# 6️⃣ Quantization Tables
+
+# -----------------------------
+
+Q_Y = np.array([
+
+    [16,11,10,16,24,40,51,61],
+
+    [12,12,14,19,26,58,60,55],
+
+    [14,13,16,24,40,57,69,56],
+
+    [14,17,22,29,51,87,80,62],
+
+    [18,22,37,56,68,109,103,77],
+
+    [24,35,55,64,81,104,113,92],
+
+    [49,64,78,87,103,121,120,101],
+
+    [72,92,95,98,112,100,103,99]
+
+], dtype=np.float32)
+
+
+
+Q_C = np.array([
+
+    [17,18,24,47,99,99,99,99],
+
+    [18,21,26,66,99,99,99,99],
+
+    [24,26,56,99,99,99,99,99],
+
+    [47,66,99,99,99,99,99,99],
+
+    [99,99,99,99,99,99,99,99],
+
+    [99,99,99,99,99,99,99,99],
+
+    [99,99,99,99,99,99,99,99],
+
+    [99,99,99,99,99,99,99,99]
+
+], dtype=np.float32)
+
+
+
+def scale_quant(Q, quality=50):
+
+    scale = 5000/quality if quality<50 else 200-2*quality
+
+    Q_scaled = np.floor((Q*scale+50)/100)
+
+    Q_scaled[Q_scaled==0]=1
+
+    return Q_scaled.astype(np.int32)
+
+
+
+Q_Y_scaled = scale_quant(Q_Y, quality=20)
+
+Q_C_scaled = scale_quant(Q_C, quality=20)
+
+
+
+# -----------------------------
+
+# 7️⃣ Quantize blocks
+
+# -----------------------------
+
+def quantize(blocks, Q):
+
+    return [np.round(b/Q).astype(np.int32) for b in blocks]
+
+
+
+Y_q  = quantize(Y_blocks, Q_Y_scaled)
+
+Cb_q = quantize(Cb_blocks, Q_C_scaled)
+
+Cr_q = quantize(Cr_blocks, Q_C_scaled)
+
+
+
+# -----------------------------
+
+# 8️⃣ Zigzag
+
+# -----------------------------
+
+zigzag_order = [
+
+     0,  1,  5,  6, 14, 15, 27, 28,
+
+     2,  4,  7, 13, 16, 26, 29, 42,
+
+     3,  8, 12, 17, 25, 30, 41, 43,
+
+     9, 11, 18, 24, 31, 40, 44, 53,
+
+    10, 19, 23, 32, 39, 45, 52, 54,
+
+    20, 22, 33, 38, 46, 51, 55, 60,
+
+    21, 34, 37, 47, 50, 56, 59, 61,
+
+    35, 36, 48, 49, 57, 58, 62, 63
+
+]
+
+
+
+def zigzag(block):
+
+    flat = block.flatten()
+
+    return [flat[i] for i in zigzag_order]
+
+
+
+Y_z  = [zigzag(b) for b in Y_q]
+
+Cb_z = [zigzag(b) for b in Cb_q]
+
+Cr_z = [zigzag(b) for b in Cr_q]
+
+
+
+# -----------------------------
+
+# 9️⃣ DC differential
+
+# -----------------------------
+
+def dc_diff(blocks):
+
+    dc = [b[0] for b in blocks]
+
+    diff = [dc[0]] + [dc[i]-dc[i-1] for i in range(1,len(dc))]
+
+    return diff
+
+
+
+Y_dc  = dc_diff(Y_z)
+
+Cb_dc = dc_diff(Cb_z)
+
+Cr_dc = dc_diff(Cr_z)
+
+
+
+# -----------------------------
+
+# 10️⃣ AC RLE
+
+# -----------------------------
+
+def rle_ac(ac):
+
+    res=[]
+
+    run=0
+
+    for v in ac:
+
+        if v==0:
+
+            run+=1
+
+            if run==16:
+
+                res.append((15,0))
+
+                run=0
+
+        else:
+
+            res.append((run,v))
+
+            run=0
+
+    res.append((0,0))
+
+    return res
+
+
+
+Y_ac  = [rle_ac(b[1:]) for b in Y_z]
+
+Cb_ac = [rle_ac(b[1:]) for b in Cb_z]
+
+Cr_ac = [rle_ac(b[1:]) for b in Cr_z]
+
+
+
+# -----------------------------
+
+# 11️⃣ Huffman encode
+
+# -----------------------------
+
+def flatten(dc, ac):
+
+    lst=[]
+
+    for d,a in zip(dc,ac):
+
+        lst.append(d)
+
+        lst.extend(a)
+
+    return lst
+
+
+
+def huffman_encode(dc, ac):
+
+    symbols = flatten(dc,ac)
+
+    symbols = [str(s) for s in symbols]
+
+    freq = Counter(symbols)
+
+    
+
+    class Node:
+
+        def __init__(self,sym=None,f=0):
+
+            self.sym=sym
+
+            self.freq=f
+
+            self.left=None
+
+            self.right=None
+
+        def __lt__(self,other):
+
+            return self.freq<other.freq
+
+
+
+    heap=[Node(s,f) for s,f in freq.items()]
+
+    heapq.heapify(heap)
+
+    while len(heap)>1:
+
+        a=heapq.heappop(heap)
+
+        b=heapq.heappop(heap)
+
+        p=Node(None,a.freq+b.freq)
+
+        p.left=a
+
+        p.right=b
+
+        heapq.heappush(heap,p)
+
+    root=heap[0]
+
+    
+
+    def gen_codes(node,prefix="",code={}):
+
+        if node.sym!=None:
+
+            code[node.sym]=bitarray(prefix)
+
+        else:
+
+            gen_codes(node.left,prefix+"0",code)
+
+            gen_codes(node.right,prefix+"1",code)
+
+        return code
+
+    
+
+    codes=gen_codes(root)
+
+    bitstream=bitarray()
+
+    for s in symbols:
+
+        bitstream.extend(codes[s])
+
+    return bitstream, codes
+
+
+
+Y_stream, Y_codes = huffman_encode(Y_dc, Y_ac)
+
+Cb_stream, Cb_codes = huffman_encode(Cb_dc, Cb_ac)
+
+Cr_stream, Cr_codes = huffman_encode(Cr_dc, Cr_ac)
+
+
+
+print("Encoding complete ✅")
+
+
+
+# -----------------------------
+
+# 12️⃣ Decoder starts here
+
+# -----------------------------
+
+def dequantize(block, Q):
+
+    return block * Q
+
+
+
+def idct_block(block):
+
+    return cv2.idct(block.astype(np.float32))
+
+
+
+def reconstruct_channel(blocks, Q, H_target, W_target):
+
+    # calculate padded size
+
+    h_blocks = (H_target + 7)//8
+
+    w_blocks = (W_target + 7)//8
+
+    channel = np.zeros((h_blocks*8, w_blocks*8), dtype=np.float32)
+
+    idx=0
+
+    for i in range(h_blocks):
+
+        for j in range(w_blocks):
+
+            if idx<len(blocks):
+
+                channel[i*8:(i+1)*8, j*8:(j+1)*8] = idct_block(dequantize(blocks[idx], Q))
+
+                idx+=1
+
+    return channel[:H_target,:W_target]
+
+
+
+Y_idct  = reconstruct_channel(Y_q, Q_Y_scaled, H, W)
+
+Cb_idct = reconstruct_channel(Cb_q, Q_C_scaled, H//2, W//2)
+
+Cr_idct = reconstruct_channel(Cr_q, Q_C_scaled, H//2, W//2)
+
+
+
+# Upsample Cb and Cr to original size
+
+Cb_full = cv2.resize(Cb_idct, (W,H), interpolation=cv2.INTER_LINEAR)
+
+Cr_full = cv2.resize(Cr_idct, (W,H), interpolation=cv2.INTER_LINEAR)
+
+
+
+# Merge and convert back to BGR
+
+ycrcb_recon = cv2.merge([Y_idct+128, Cr_full+128, Cb_full+128])
+
+recon = cv2.cvtColor(np.clip(ycrcb_recon,0,255).astype(np.uint8), cv2.COLOR_YCrCb2BGR)
+
+
+
+print("Decoding complete ✅")
+
+# Merge and convert back to BGR
+
+ycrcb_recon = cv2.merge([Y_idct + 128, Cr_full + 128, Cb_full + 128])
+
+recon = cv2.cvtColor(np.clip(ycrcb_recon, 0, 255).astype(np.uint8), cv2.COLOR_YCrCb2BGR)
+
+
+
+# -----------------------------
+
+# Save locally
+
+# -----------------------------
+
+output_filename = "reconstructed.png"
+
+cv2.imwrite(output_filename, recon)
+
+print(f"Reconstructed image saved locally as '{output_filename}' ✅")
+
+
