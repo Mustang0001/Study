@@ -1,0 +1,301 @@
+Perfect 👍 — we’ll start your **DSA journey properly from Week 1**.
+
+Since your target is:
+
+* DevOps role in top product companies
+* Using Python
+* Studying in travel + breaks
+* Building strong fundamentals (NOT rushing)
+
+👉 Week 1 will focus on the **MOST IMPORTANT FOUNDATION**:
+
+Because without this, everything later becomes hard.
+
+---
+
+# 🏆 WEEK 1 DSA MASTER PLAN (FOUNDATION WEEK)
+
+## 🎯 Goal of This Week
+
+By end of week you should:
+
+✅ Be comfortable with Python basics for DSA
+✅ Understand time & space complexity
+✅ Master Arrays fundamentals
+✅ Learn problem-solving thinking
+✅ Solve ~25–30 problems
+
+This is the base of everything.
+
+---
+
+# 📅 WEEK 1 CHAPTERS (IN ORDER)
+
+You will cover **3 major chapters** this week:
+
+---
+
+# 📘 CHAPTER 1 — Python Foundations for DSA
+
+(2 days)
+
+This is NOT normal Python learning.
+
+This is Python specifically for problem solving.
+
+---
+
+## 🔹 Topics to Cover (In Depth)
+
+### 1️⃣ Variables & Data Types (DSA context)
+
+* int, float, bool
+* strings
+* lists
+* tuples
+* dictionaries
+* sets
+
+Understand:
+👉 When to use which structure
+
+---
+
+### 2️⃣ Input/Output for Problems
+
+* Taking input efficiently
+* Printing output formats
+
+---
+
+### 3️⃣ Loops & Conditions
+
+* for loops
+* while loops
+* nested loops
+* break & continue
+
+---
+
+### 4️⃣ Functions (VERY IMPORTANT)
+
+* Writing reusable functions
+* Return values
+* Parameters
+
+---
+
+### 5️⃣ Python Built-ins for DSA
+
+Must know deeply:
+
+* len()
+* min(), max()
+* sum()
+* sorted()
+* range()
+* enumerate()
+
+---
+
+### 6️⃣ String Operations
+
+* Slicing
+* Indexing
+* Reverse
+* Checking characters
+
+---
+
+# 📘 CHAPTER 2 — Time & Space Complexity
+
+(1 day)
+
+This is CRITICAL.
+
+Without this you cannot solve efficiently.
+
+---
+
+## 🔹 Topics to Cover
+
+### 1️⃣ What is Time Complexity
+
+* Why efficiency matters
+* How algorithms scale
+
+---
+
+### 2️⃣ Big-O Notation
+
+Understand deeply:
+
+* O(1)
+* O(log n)
+* O(n)
+* O(n log n)
+* O(n²)
+
+---
+
+### 3️⃣ Analyzing Loops
+
+* Single loops
+* Nested loops
+* Multiple loops
+
+---
+
+### 4️⃣ Space Complexity
+
+* Auxiliary space
+* In-place vs extra memory
+
+---
+
+# 📘 CHAPTER 3 — Arrays (MOST IMPORTANT)
+
+(4 days)
+
+Arrays = foundation of entire DSA.
+
+Nearly 40% interview questions come from here.
+
+---
+
+## 🔹 Subtopics (In Depth)
+
+### 1️⃣ Array Basics
+
+* Indexing
+* Traversal
+* Accessing elements
+
+---
+
+### 2️⃣ Operations on Arrays
+
+* Insert element
+* Delete element
+* Update values
+
+---
+
+### 3️⃣ Searching Techniques
+
+* Linear search
+* Basic binary search concept
+
+---
+
+### 4️⃣ Important Patterns
+
+Must learn deeply:
+
+* Two pointer technique
+* Sliding window concept
+* Prefix sum basics
+
+---
+
+### 5️⃣ Common Problem Types
+
+Understand patterns:
+
+* Finding max/min
+* Removing duplicates
+* Counting frequency
+* Finding missing numbers
+* Subarray problems
+
+---
+
+# 📅 DAILY EXECUTION PLAN (YOUR ROUTINE BASED)
+
+## 🟢 Day 1–2
+
+Morning Bus:
+👉 Python basics videos
+
+Office Break:
+👉 Practice simple Python coding
+
+Evening Bus:
+👉 Revise concepts
+
+---
+
+## 🟢 Day 3
+
+Learn:
+👉 Time complexity deeply
+
+Practice:
+👉 Analyze loops
+
+---
+
+## 🟢 Day 4–7
+
+Focus:
+👉 Arrays
+
+Solve:
+👉 5–7 problems daily
+
+---
+
+# 🎯 WEEK 1 PROBLEM TARGET
+
+You must solve:
+
+| Difficulty  | Count |
+| ----------- | ----- |
+| Easy        | 20    |
+| Easy-Medium | 10    |
+
+Total = ~30 problems.
+
+---
+
+# 💡 What Skills You Will Gain After Week 1
+
+You will be able to:
+
+* Write clean Python code
+* Understand algorithm efficiency
+* Solve basic array problems confidently
+* Think logically about solutions
+
+This is the foundation for all future DSA.
+
+---
+
+# ⚠️ RULE FOR THIS WEEK
+
+Do NOT jump ahead.
+
+If you rush foundation:
+
+You will struggle later.
+
+Depth > speed.
+
+---
+
+# 🚀 NEXT STEP
+
+From tomorrow you’ll start:
+
+👉 **Day-1 detailed study plan**
+with:
+
+* Exact videos to watch
+* Exact problems to solve
+* Step-by-step execution
+
+Just say:
+
+**“Give Day 1 plan”**
+
+and we start your journey 🚀

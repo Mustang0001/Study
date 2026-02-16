@@ -1,0 +1,350 @@
+Perfect.
+Now we go into **execution mode**.
+
+This is your **WEEK 1 – DSA Foundation Bootcamp**
+Designed for:
+
+* DevOps target (but strong DSA base)
+* Python language
+* Bus = learning
+* Office break = solving
+* No wasting time
+
+This week is about **building thinking muscle**.
+
+---
+
+# 🗓 WEEK 1 – DAY BY DAY DETAILED PLAN
+
+---
+
+# 🔵 DAY 1 – Python for DSA (Core Basics)
+
+## 🎯 Goal:
+
+Be comfortable writing simple logic without thinking about syntax.
+
+---
+
+## 🚌 Morning Bus (Concept Learning)
+
+### 📘 Topics:
+
+1. Python data types:
+
+   * int
+   * float
+   * bool
+   * string
+   * list
+   * dictionary
+   * set
+
+2. Difference between:
+
+   * list vs tuple
+   * list vs set
+   * list vs dictionary
+
+3. Mutability concept
+
+4. Basic input/output
+
+---
+
+## 🏢 Office Break (Practice)
+
+Write programs:
+
+1. Reverse a number
+2. Check palindrome number
+3. Count digits in a number
+4. Swap two numbers
+5. Find max of 3 numbers
+
+Focus:
+
+* Clean code
+* No syntax errors
+* Logical clarity
+
+---
+
+## 🚌 Evening Bus (Mental Revision)
+
+Think:
+
+* When to use list?
+* When to use dictionary?
+* Why set is fast for lookup?
+
+---
+
+# 🔵 DAY 2 – Loops + Strings + Functions
+
+## 🎯 Goal:
+
+Write logic using loops confidently.
+
+---
+
+## 🚌 Morning Bus (Concept Learning)
+
+### 📘 Topics:
+
+1. for loop
+2. while loop
+3. Nested loops
+4. break & continue
+5. String indexing
+6. String slicing
+7. Writing functions
+8. Return vs print
+
+---
+
+## 🏢 Office Break (Practice Problems)
+
+Solve:
+
+1. Reverse a string
+2. Check palindrome string
+3. Count vowels
+4. Count frequency of characters
+5. Print pattern (triangle)
+
+---
+
+## 🚌 Evening Bus
+
+Mentally dry run:
+
+* How does nested loop work?
+* How many times does inner loop run?
+
+---
+
+# 🔵 DAY 3 – Time & Space Complexity (CRITICAL DAY)
+
+This separates average from elite.
+
+---
+
+## 🚌 Morning Bus (Concept Learning)
+
+### 📘 Topics:
+
+1. Why complexity matters
+2. Big-O notation
+
+   * O(1)
+   * O(n)
+   * O(n²)
+   * O(log n)
+3. How to calculate loop complexity
+4. Nested loop analysis
+5. Space complexity basics
+
+---
+
+## 🏢 Office Break (Analysis Practice)
+
+Take previous problems and:
+
+* Write their time complexity
+* Identify inefficient code
+* Improve if possible
+
+Example:
+
+* Find max using 2 loops vs 1 loop
+
+---
+
+## 🚌 Evening Bus
+
+Think:
+
+* Why is O(n²) bad?
+* When does log n happen?
+
+---
+
+# 🔵 DAY 4 – Arrays Basics
+
+Now real DSA begins.
+
+---
+
+## 🚌 Morning Bus
+
+### 📘 Topics:
+
+1. What is an array?
+2. Indexing concept
+3. Traversal
+4. Insert / Delete (conceptually)
+5. Python list as array
+
+---
+
+## 🏢 Office Break
+
+Solve:
+
+1. Find max in array
+2. Find min
+3. Sum of array
+4. Count even/odd numbers
+5. Second largest element
+
+---
+
+## 🚌 Evening Bus
+
+Think:
+
+* How to find second largest in one pass?
+* Can it be done in O(n)?
+
+---
+
+# 🔵 DAY 5 – Array Patterns (Important)
+
+---
+
+## 🚌 Morning Bus
+
+### 📘 Topics:
+
+1. Two pointer technique
+2. Sliding window concept (basic)
+3. Prefix sum idea
+4. Linear search
+5. Intro to Binary search (concept only)
+
+---
+
+## 🏢 Office Break
+
+Solve:
+
+1. Remove duplicates from sorted array
+2. Move zeros to end
+3. Find pair with given sum
+4. Maximum subarray sum (brute force)
+5. Prefix sum example
+
+---
+
+## 🚌 Evening Bus
+
+Think:
+
+* When to use two pointers?
+* Why sliding window improves complexity?
+
+---
+
+# 🔵 DAY 6 – Deeper Array Problems
+
+---
+
+## 🚌 Morning Bus
+
+Revise:
+
+* All array patterns
+* Complexity analysis
+
+---
+
+## 🏢 Office Break
+
+Solve medium-level:
+
+1. Best time to buy and sell stock
+2. Kadane’s Algorithm
+3. Subarray with given sum
+4. Merge two sorted arrays
+
+---
+
+## 🚌 Evening Bus
+
+Dry run Kadane mentally.
+
+Understand WHY it works.
+
+---
+
+# 🔵 DAY 7 – Weekly Consolidation
+
+This is CRITICAL.
+
+---
+
+## 🚌 Morning Bus
+
+Revise entire week:
+
+* Python
+* Complexity
+* Arrays
+
+---
+
+## 🏢 Office Break
+
+Mock test:
+Solve 4 random array problems
+Time yourself (30–40 min)
+
+---
+
+## Night (Optional if energy)
+
+Review mistakes.
+
+---
+
+# 📊 WEEK 1 TARGET
+
+You should complete:
+
+* ~30 problems
+* Strong Python basics
+* Clear complexity understanding
+* Confident array handling
+
+---
+
+# 🧠 After Week 1 You Should Be Able To:
+
+✔ Analyze time complexity
+✔ Solve array problems confidently
+✔ Write clean Python
+✔ Think in patterns
+
+---
+
+# ⚠️ IMPORTANT RULE
+
+During this week:
+
+DO NOT jump to trees or graphs.
+
+Foundation first.
+
+---
+
+If you follow this strictly, your DSA base will be solid.
+
+Now tell me:
+
+👉 Do you want me to also give you:
+
+* Exact difficulty breakdown (easy/medium count)
+* Or specific problem list pattern to follow daily?
+
+We are building this like a mission.

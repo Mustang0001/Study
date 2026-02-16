@@ -1,0 +1,228 @@
+Yes.
+
+You **can** modify drivers and build a custom pipeline.
+
+But let’s separate three very different things clearly:
+
+1. Kernel bypass
+2. Driver modification
+3. “Completely bypass Linux”
+
+They are not the same.
+
+---
+
+# 🔹 What You CAN Do
+
+You can absolutely:
+
+* Modify the NIC driver
+* Remove skb allocation
+* Remove TCP/IP stack usage
+* Export DMA buffers directly to user space
+* Replace interrupt mode with polling
+* Build a custom RX/TX pipeline
+* Strip Linux networking layer completely
+
+That is real engineering.
+
+That is kernel-level pipeline control.
+
+---
+
+# 🔹 What You CANNOT Do (While Still Using Linux)
+
+You cannot:
+
+* Remove MMU
+* Remove DMA engine control
+* Remove cache coherency logic
+* Remove hardware RX rings
+* Remove PHY/MAC processing
+* Remove bus arbitration
+
+Those are enforced in silicon.
+
+No driver modification can eliminate those.
+
+---
+
+# 🔹 What “Complete Custom Pipeline” Actually Means
+
+If you modify the driver, your new pipeline becomes:
+
+NIC DMA
+→ custom RX descriptor ring
+→ memory region you control
+→ mmap into user space
+→ your software polls descriptors
+
+No:
+
+* skb
+* socket()
+* TCP/IP stack
+* netfilter
+* copy_to_user
+* kernel buffering
+
+At that point, Linux is only:
+
+* Initializing hardware
+* Managing page tables
+* Keeping system alive
+
+That is 90% bypass.
+
+And yes — you can do that.
+
+---
+
+# 🔥 But Here’s the Critical Constraint
+
+Raspberry Pi 4 GENET NIC is:
+
+* Not PCIe
+* Integrated with SoC
+* Limited documentation compared to Intel NICs
+* Not designed for user-space polling mode drivers
+
+So your customization depth is limited by:
+
+* Hardware descriptor structure
+* DMA design
+* Register access constraints
+
+You cannot redesign the NIC behavior itself.
+
+You can only control how Linux interacts with it.
+
+---
+
+# 🔹 What a Real Custom Driver Pipeline Would Involve
+
+You would:
+
+1. Download Raspberry Pi kernel source.
+2. Study `bcmgenet.c`
+3. Understand:
+
+   * RX descriptor layout
+   * DMA address mapping
+   * Interrupt flow
+4. Remove skb allocation path.
+5. Allocate contiguous DMA region.
+6. Expose that region through `mmap()` in a character device.
+7. Implement userspace polling loop.
+
+Your app would then:
+
+* Directly check descriptor status bits
+* Read packet from DMA buffer
+* Clear descriptor ownership bit
+
+That is true driver-level control.
+
+---
+
+# 🔹 What This Achieves
+
+You eliminate:
+
+* OS-level packet buffering
+* Network stack latency
+* Kernel scheduling delays
+* Copy overhead
+
+You gain:
+
+* Deterministic packet handling
+* Lower latency
+* Lower CPU overhead
+* Full data path visibility
+
+---
+
+# 🔹 What This Does NOT Achieve
+
+It does not:
+
+* Change physical layer
+* Change Ethernet frame format
+* Change how camera sends data
+* Give raw sensor access
+* Remove hardware buffering inside NIC
+
+---
+
+# 🔥 The Hard Truth
+
+You can customize the pipeline.
+
+But you are customizing:
+
+Linux → Hardware interaction
+
+Not:
+
+Hardware itself.
+
+---
+
+# ⚙ If Your Goal Is To Show Something Impressive
+
+The impressive demo is:
+
+* Custom kernel build
+* Modified NIC driver
+* Zero-copy mmap DMA region
+* Userspace polling engine
+* Latency benchmarks vs socket()
+
+That proves:
+
+You understand:
+
+* DMA
+* Descriptor rings
+* Cache coherency
+* Driver architecture
+* Memory mapping
+* Kernel internals
+
+That’s serious.
+
+---
+
+# 🚨 But Let Me Ask One Important Question
+
+Do you want:
+
+A) Practical bypass to improve streaming
+B) Hardcore kernel engineering showcase
+C) Eventually build your own minimal OS
+
+Because:
+
+Path A → XDP/AF_XDP
+Path B → Driver rewrite
+Path C → Bare-metal ARM
+
+Each is radically different in depth and time.
+
+---
+
+If you say:
+
+“I want the deepest possible but realistic on RPi”
+
+Then next I will:
+
+* Break down GENET RX descriptor structure
+* Explain DMA ownership bits
+* Show how Linux attaches skb
+* Show where you would intercept
+
+And we go surgical.
+
+Your move.

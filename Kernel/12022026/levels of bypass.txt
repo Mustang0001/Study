@@ -1,0 +1,215 @@
+Good.
+Now we are talking properly.
+
+Forget the camera.
+We focus on **hardware → user space directly**.
+
+But we must be precise about what “bypass Linux” really means.
+
+You cannot bypass:
+
+* CPU
+* MMU
+* IOMMU
+* DMA engine
+* Bus fabric (AXI on RPi)
+* Interrupt controller
+
+You can only bypass:
+
+* Linux network stack
+* skb allocation
+* copy_to_user
+* syscall overhead
+* scheduler overhead
+
+So let’s define your goal correctly:
+
+> You want hardware DMA buffers directly mapped into user space with minimal kernel mediation.
+
+That is real kernel bypass.
+
+---
+
+# Step 0 — Understand Raspberry Pi 4 Reality
+
+RPi 4 Ethernet controller:
+
+Broadcom BCM54213 PHY
+Broadcom GENET MAC
+Connected internally over SoC interconnect (not PCIe NIC)
+
+This is NOT:
+
+* Intel ixgbe
+* Mellanox ConnectX
+* PCIe polling-mode NIC
+
+So DPDK full bypass is not realistically supported.
+
+That does NOT mean you cannot bypass.
+
+It means you must choose the correct layer.
+
+---
+
+# Level 1 — Soft Bypass (Safe & Realistic)
+
+Use:
+
+* XDP
+* AF_XDP
+* mmap-based packet rings
+
+Pipeline becomes:
+
+NIC DMA
+→ RX ring buffer
+→ XDP hook
+→ shared memory
+→ user space
+
+No skb.
+No copy_to_user.
+No TCP/IP stack.
+
+This is true bypass of the Linux network stack.
+
+---
+
+# Level 2 — Driver-Level Bypass
+
+You:
+
+1. Download Linux source
+2. Modify `bcmgenet.c`
+3. Replace interrupt-driven RX with polling
+4. Allocate large contiguous DMA region
+5. Map that DMA region into user space via `mmap`
+6. Expose file descriptor via char device
+7. Disable skb allocation completely
+
+Then:
+
+NIC DMA
+→ your DMA ring
+→ user space pointer
+
+Now you are 90% bypassed.
+
+But kernel is still:
+
+* Setting up page tables
+* Managing memory
+* Handling device initialization
+
+---
+
+# Level 3 — Bare Metal
+
+If you truly want:
+
+Hardware → software with zero Linux
+
+Then:
+
+* Write your own bootloader
+* Initialize ARM cores
+* Initialize MMU
+* Initialize GENET registers manually
+* Configure DMA descriptors
+* Poll RX ring manually
+* Parse Ethernet frames yourself
+
+Now Linux is gone.
+
+But:
+
+You are now writing an operating system.
+
+---
+
+# Important Mental Reset
+
+Kernel bypass ≠ breaking kernel
+Kernel bypass = avoiding kernel hot path
+
+Big difference.
+
+---
+
+# What You Should Do First (Realistic Path)
+
+Since you're serious about this:
+
+Phase 1:
+Learn how DMA works on ARM
+
+Phase 2:
+Understand memory-mapped IO
+
+Phase 3:
+Write a minimal Linux kernel module
+
+* allocate DMA buffer
+* map it to user space
+
+Phase 4:
+Hook into GENET driver and redirect RX path
+
+Phase 5:
+Benchmark latency vs normal socket()
+
+---
+
+# The Brutal Truth About RPi 4
+
+RPi 4 is not ideal for hardcore bypass research.
+
+Reasons:
+
+* NIC not PCIe
+* No high-performance polling driver support
+* Limited DMA flexibility
+* Shared memory bus
+
+If your long-term goal is extreme bypass:
+
+Use:
+
+* x86 machine
+* Intel NIC (ixgbe or i40e)
+* DPDK-supported card
+
+That is real playground.
+
+---
+
+# Let Me Ask You One Important Thing
+
+What is your actual objective?
+
+A) Learning deep kernel engineering
+B) Achieving lowest latency possible
+C) Building custom high-performance streaming
+D) Writing your own OS
+E) All of them
+
+Depending on that, the roadmap changes drastically.
+
+---
+
+If you say:
+
+“Start from absolute hardware and build upward”
+
+Then next message I will:
+
+* Explain ARM boot sequence
+* Explain MMU enable flow
+* Explain how NIC DMA descriptors are structured
+* Show you the true hardware path
+
+And we will go extremely deep.
+
+Your move.
