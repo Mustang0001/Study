@@ -1,0 +1,558 @@
+Great choice. LM Studio is the easiest way to get started with local AI.
+
+Step 1 — Download LM Studio
+
+Open:
+
+LM Studio Download
+
+Download:
+
+Windows version (for your laptop)
+
+
+Install it normally like any Windows app.
+
+
+---
+
+Step 2 — Open LM Studio
+
+After installation:
+
+launch LM Studio
+
+allow permissions if Windows asks
+
+
+You’ll see sections like:
+
+Chat
+
+Discover
+
+My Models
+
+Developer
+
+
+
+---
+
+Step 3 — Download Your First Model
+
+Go to:
+
+Discover
+
+
+Search for one of these:
+
+Best Starter Model (Recommended)
+
+qwen2.5-coder-7b-instruct
+
+If your laptop has lower RAM:
+
+qwen2.5-coder-3b
+
+If your laptop is powerful:
+
+llama-3.1-8b-instruct
+
+
+---
+
+Step 4 — Choose GGUF Version
+
+When selecting models: choose:
+
+GGUF
+
+preferably:
+
+Q4_K_M
+
+or Q5_K_M
+
+
+
+These are optimized compressed versions.
+
+
+---
+
+Step 5 — Download Model
+
+Click:
+
+Download
+
+
+Size examples:
+
+3B model → ~2GB
+
+7B model → ~4–5GB
+
+8B model → ~5–6GB
+
+
+May take some time depending on internet.
+
+
+---
+
+Step 6 — Load Model
+
+After download:
+
+go to Chat
+
+select the model
+
+click “Load”
+
+
+Wait 20–60 seconds first time.
+
+
+---
+
+Step 7 — Start Using AI Locally
+
+Example prompts:
+
+Explain Kubernetes ingress simply
+
+Create Jenkins pipeline for Docker app
+
+Explain Linux namespaces and cgroups
+
+Write Terraform for EC2 + Security Group
+
+
+---
+
+Recommended Settings
+
+Inside settings:
+
+Enable GPU acceleration if available
+
+Context length:
+
+4096 or 8192
+
+
+Temperature:
+
+0.7
+
+
+
+
+---
+
+Best Models For You Later
+
+After getting comfortable:
+
+Coding
+
+DeepSeek Coder
+
+Qwen Coder
+
+
+General AI
+
+Llama 3.1
+
+Gemma
+
+
+Fast Lightweight
+
+Phi
+
+
+
+---
+
+Important
+
+Use LM Studio on:
+
+your personal laptop ideally
+
+
+Avoid:
+
+company confidential data
+
+proprietary code
+
+internal documents
+
+
+even with local AI.
+
+
+
+
+
+
+
+
+
+
+Alright — here’s the complete beginner-friendly setup for LM Studio step-by-step on Windows.
+
+We’ll do this like a fresh setup with no assumptions.
+
+
+---
+
+STEP 1 — Check Your Laptop Specs
+
+First check:
+
+RAM
+
+GPU
+
+Free storage
+
+
+Press:
+
+Windows + R
+
+Type:
+
+dxdiag
+
+Press Enter.
+
+Check:
+
+Memory (RAM)
+
+GPU name
+
+
+
+---
+
+Important
+
+For:
+
+qwen2.5-coder:32b
+
+Recommended:
+
+32GB RAM
+
+NVIDIA GPU preferred
+
+25GB free storage
+
+
+If you have:
+
+16GB RAM → better use 14B model first.
+
+
+
+---
+
+STEP 2 — Download LM Studio
+
+Open browser.
+
+Go to:
+
+LM Studio Download
+
+Click:
+
+Download for Windows
+
+Wait for download.
+
+
+---
+
+STEP 3 — Install LM Studio
+
+Open downloaded file.
+
+Usually named something like:
+
+LM-Studio-Setup.exe
+
+Then:
+
+Click Next
+
+Accept terms
+
+Install
+
+Finish
+
+
+
+---
+
+STEP 4 — Open LM Studio
+
+Press Windows key.
+
+Search:
+
+LM Studio
+
+Open it.
+
+First launch may take some time.
+
+
+---
+
+STEP 5 — Understand The Interface
+
+You’ll see left sidebar:
+
+Section	Meaning
+
+Chat	Where you talk to AI
+Discover	Download AI models
+My Models	Models you downloaded
+Developer	Advanced features
+
+
+
+---
+
+STEP 6 — Download Your AI Model
+
+Click:
+
+Discover
+
+Search:
+
+qwen2.5-coder
+
+You’ll see many versions.
+
+
+---
+
+STEP 7 — Choose Correct Model
+
+If You Have 32GB RAM
+
+Choose:
+
+Qwen2.5-Coder-32B-Instruct-GGUF
+
+Then choose:
+
+Q4_K_M
+
+
+---
+
+If You Have 16GB RAM
+
+Choose:
+
+Qwen2.5-Coder-14B-Instruct-GGUF
+
+Then:
+
+Q4_K_M
+
+
+---
+
+STEP 8 — Download Model
+
+Click:
+
+Download
+
+Wait patiently.
+
+Large models can take:
+
+10–60 mins depending on internet.
+
+
+
+---
+
+STEP 9 — Load The Model
+
+After download: go to:
+
+Chat
+
+Top dropdown: select your model.
+
+Then click:
+
+Load Model
+
+Wait.
+
+First startup may take:
+
+1–3 minutes.
+
+
+
+---
+
+STEP 10 — Start Chatting
+
+Type:
+
+Explain Docker networking simply
+
+OR:
+
+Create Go REST API example
+
+OR:
+
+Create Jenkins pipeline for Python app
+
+You now have local AI running on your laptop.
+
+
+---
+
+STEP 11 — Speed Improvements (IMPORTANT)
+
+Go:
+
+Settings
+
+Then:
+
+Runtime
+
+Enable:
+
+GPU Acceleration
+
+CUDA/Vulkan if available
+
+
+This makes responses much faster.
+
+
+---
+
+STEP 12 — Recommended Beginner Settings
+
+Context Length
+
+Set:
+
+8192
+
+Temperature
+
+Set:
+
+0.7
+
+
+---
+
+STEP 13 — Storage Location (Optional)
+
+Models consume huge space.
+
+To change model folder: Settings → Storage
+
+Choose another drive if needed.
+
+
+---
+
+STEP 14 — Best Beginner Workflow
+
+For your DevOps path:
+
+Open:
+
+LM Studio
+
+VS Code
+
+WSL Ubuntu
+
+Docker Desktop
+
+
+Then:
+
+ask AI questions,
+
+generate code,
+
+debug scripts,
+
+learn Kubernetes,
+
+practice Go/Python.
+
+
+
+---
+
+STEP 15 — What To Learn First With AI
+
+Best things for you:
+
+Linux
+
+Docker
+
+Kubernetes
+
+Jenkins
+
+Terraform
+
+Python automation
+
+Golang APIs
+
+AWS basics
+
+
+
+---
+
+IMPORTANT NOTE
+
+Do this on:
+
+your personal laptop ideally.
+
+
+Avoid:
+
+company confidential code/docs
+
+internal credentials
+
+proprietary infrastructure details.
